@@ -1,4 +1,5 @@
-var endTime = new Date(2015, 12, 5).getTime() / 1000;
+// YYYY-MM-DD
+var endTime = new Date(2019, 9, 5).getTime() / 1000;
 
 function setClock() {
     var elapsed = new Date().getTime() / 1000;
@@ -14,7 +15,7 @@ function setClock() {
 }
 setClock();
 
-var endTime2 = new Date(2015, 12, 4).getTime() / 1000;
+var endTime2 = new Date(2019, 9, 4).getTime() / 1000;
 
 function setClock2() {
     var elapsed = new Date().getTime() / 1000;
@@ -30,7 +31,7 @@ function setClock2() {
 }
 setClock2();
 
-var endTime3 = new Date(2015, 12, 3).getTime() / 1000;
+var endTime3 = new Date(2019, 9, 3).getTime() / 1000;
 
 function setClock3() {
     var elapsed = new Date().getTime() / 1000;
@@ -46,7 +47,7 @@ function setClock3() {
 }
 setClock3();
 
-var endTime4 = new Date(2015, 12, 2).getTime() / 1000;
+var endTime4 = new Date(2019, 9, 2).getTime() / 1000;
 
 function setClock4() {
     var elapsed = new Date().getTime() / 1000;
@@ -62,7 +63,7 @@ function setClock4() {
 }
 setClock4();
 
-var endTime5 = new Date(2015, 12, 6).getTime() / 1000;
+var endTime5 = new Date(2019, 9, 6).getTime() / 1000;
 
 function setClock5() {
     var elapsed = new Date().getTime() / 1000;
@@ -78,7 +79,7 @@ function setClock5() {
 }
 setClock5();
 
-var endTime6 = new Date(2015, 12, 3).getTime() / 1000;
+var endTime6 = new Date(2019, 9, 3).getTime() / 1000;
 
 function setClock6() {
     var elapsed = new Date().getTime() / 1000;
@@ -94,7 +95,7 @@ function setClock6() {
 }
 setClock6();
 
-var endTime7 = new Date(2015, 12, 10).getTime() / 1000;
+var endTime7 = new Date(2019, 9, 10).getTime() / 1000;
 
 function setClock7() {
     var elapsed = new Date().getTime() / 1000;
@@ -110,7 +111,7 @@ function setClock7() {
 }
 setClock7();
 
-var endTime8 = new Date(2015, 12, 1).getTime() / 1000;
+var endTime8 = new Date(2019, 9, 1).getTime() / 1000;
 
 function setClock8() {
     var elapsed = new Date().getTime() / 1000;
