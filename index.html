@@ -16,14 +16,41 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/ta-silent-auction.css">
 
-
+  <!-- Custom JS -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script defer src="./js/index.min.js"></script>
 </head>
 
 <body>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAn6nHzWl8WE7E8tYUyOwhqiRMerHf66eM",
+      authDomain: "ta-silent-auction.firebaseapp.com",
+      databaseURL: "https://ta-silent-auction.firebaseio.com",
+      projectId: "ta-silent-auction",
+      storageBucket: "",
+      messagingSenderId: "39231320254",
+      appId: "1:39231320254:web:42de0b5f7241c3c3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var auth = firebase.auth();
+  </script>
+
   <!-- Always shows a header, even in smaller screens. -->
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
@@ -37,27 +64,22 @@
         <div class="mdl-layout-spacer"></div>
         <!-- Navigation. We hide it in small screens. -->
         <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="anonymousLogin();">Login</a>
         </nav>
       </div>
     </header>
     <div class="mdl-layout__drawer">
       <span class="mdl-layout-title">Title</span>
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Login</a>
       </nav>
     </div>
     <main class="mdl-layout__content">
+      <!-- This is where the website content goes -->
       <div class="page-content">
+        <!-- Grid of auction items -->
         <div class="mdl-grid">
 
-            <!--start of 1st block-->
             <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
               <img src="./img/auction-image-1.png" alt="2015 Kia Rio on Tingeaid Silent Auction dot com website" title="myAuctionTrader.com 2015 Kia Rio">
               <div class="panel">
@@ -75,9 +97,6 @@
 
               </div>
             </div>
-            <!--end of bid column-->
-
-            <!--start of column 2-->
 
             <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
               <img src="./img/auction-image-2.png" alt="2016 Kia Sorento on Tingeaid Silent Auction dot com website" title="myAuctionTrader.com 2016 Kia Sorento">
@@ -117,7 +136,6 @@
               </div>
             </div>
 
-
             <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
               <img src="./img/auction-image-4.png" alt="2015 Kia Optima on Tingeaid Silent Auction dot com website" title="myAuctionTrader.com 2015 Kia Optima">
               <div class="panel">
@@ -137,8 +155,6 @@
 
               </div>
             </div>
-
-
 
             <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
               <img src="./img/auction-image-5.png" alt="2015 Kia Optima Hybrid on Tingeaid Silent Auction dot com website" title="myAuctionTrader.com 2015 Kia Optima Hybrid">
@@ -160,8 +176,6 @@
               </div>
             </div>
 
-
-
             <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
               <img src="./img/auction-image-6.png" alt="2016 Kia Sorento on Tingeaid Silent Auction dot com website" title="myAuctionTrader.com 2016 Kia Sorento">
               <div class="panel">
@@ -181,8 +195,6 @@
 
               </div>
             </div>
-
-
 
             <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
               <img src="./img/auction-image-7.png" alt="2015 Kia Optima Hybrid on Tingeaid Silent Auction dot com website" title="myAuctionTrader.com 2015 Kia Optima Hybrid">
@@ -204,8 +216,6 @@
               </div>
             </div>
 
-
-
             <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
               <img src="./img/auction-image-8.png" alt="2015 Kia Sedona on Tingeaid Silent Auction dot com website" title="myAuctionTrader.com 2015 Kia Sedona">
               <div class="panel">
@@ -226,9 +236,8 @@
               </div>
             </div>
 
-
         </div>
-
+        <!-- End of auction items -->
 
         <div class="row">
           <div class="large-12 columns">
@@ -273,23 +282,6 @@
               </div>
 
             </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="large-12 columns">
-            <div id="scroller_container">
-              <!--rss feed-->
-              <div class="jscroller2_left jscroller2_speed-50" style="font-family:Raleway; font-size:20px; line-height:20px; white-space:nowrap; margin: 0;"><span class="rss-feed"></span> </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="large-12 columns">
-            <marquee>
-              <div style="font-family:Arial,Raleway; font-size:20px; line-height:20px; white-space:nowrap; margin: 0;"><span class="rss-feed"></span></div>
-            </marquee>
           </div>
         </div>
 
@@ -343,10 +335,6 @@
             </div>
           </div>
         </footer>
-
-        <script src="./js/index.min.js"></script>
-        <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-
       </div>
     </main>
   </div>

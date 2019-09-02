@@ -13,6 +13,11 @@ img {
   background-color: #002147;
 }
 
+.mdl-button {
+  color: white;
+  background-color: #002147;
+}
+
 .mdl-grid {
   text-align: center;
 }

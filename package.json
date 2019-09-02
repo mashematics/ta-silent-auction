@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A website for hosting the Tingeaid silent auction",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "firebase": "^6.5.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "browser-sync": "^2.26.7",
